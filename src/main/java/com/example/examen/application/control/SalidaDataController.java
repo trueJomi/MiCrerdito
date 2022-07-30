@@ -1,6 +1,6 @@
-package com.example.examen.Application.control;
+package com.example.examen.application.control;
 
-import com.example.examen.Application.utils.WrapperResponse;
+import com.example.examen.application.utils.WrapperResponse;
 import com.example.examen.Domain.Entities.SalidaData;
 import com.example.examen.Domain.Services.SalidaDataService;
 import org.springframework.http.HttpStatus;

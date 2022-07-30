@@ -1,10 +1,10 @@
-package com.example.examen.Application.config;
+package com.example.examen.application.config;
 
 
-import com.example.examen.Application.exception.GeneralServiceException;
-import com.example.examen.Application.exception.IncorrectResourceRequestException;
-import com.example.examen.Application.exception.ResourceNotFoundException;
-import com.example.examen.Application.utils.WrapperResponse;
+import com.example.examen.application.exception.GeneralServiceException;
+import com.example.examen.application.exception.IncorrectResourceRequestException;
+import com.example.examen.application.exception.ResourceNotFoundException;
+import com.example.examen.application.utils.WrapperResponse;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

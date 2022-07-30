@@ -1,4 +1,4 @@
-package com.example.examen.Application.utils;
+package com.example.examen.application.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,6 +1,6 @@
 package com.example.examen.Infraetructure.Imp;
 
-import com.example.examen.Application.exception.ResourceNotFoundException;
+import com.example.examen.application.exception.ResourceNotFoundException;
 import com.example.examen.Domain.Entities.SalidaData;
 import com.example.examen.Domain.RepositoriesContracts.SalidaDataRepository;
 import com.example.examen.Infraetructure.Repositories.SalidaDataRepositoryJPA;
