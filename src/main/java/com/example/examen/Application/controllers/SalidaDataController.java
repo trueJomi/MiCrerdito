@@ -1,4 +1,4 @@
-package com.example.examen.Application.Controllers;
+package com.example.examen.Application.controllers;
 
 import com.example.examen.Application.utils.WrapperResponse;
 import com.example.examen.Domain.Entities.SalidaData;
