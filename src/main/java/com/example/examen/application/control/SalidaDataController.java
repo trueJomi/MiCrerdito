@@ -1,5 +1,7 @@
 package com.example.examen.application.control;
 
+import com.example.examen.application.converters.DataConverter;
+import com.example.examen.application.dto.DataDto;
 import com.example.examen.application.utils.WrapperResponse;
 import com.example.examen.Domain.Entities.SalidaData;
 import com.example.examen.Domain.Services.SalidaDataService;
@@ -12,22 +14,27 @@ import org.springframework.web.bind.annotation.*;
 public class SalidaDataController {
 
     private final SalidaDataService salidaDataService;
+    private final DataConverter dataConverter;
 
-    public SalidaDataController(SalidaDataService salidaDataService) {
+    public SalidaDataController(SalidaDataService salidaDataService, DataConverter dataConverter) {
         this.salidaDataService = salidaDataService;
+        this.dataConverter = dataConverter;
     }
 
     @PostMapping
-    public ResponseEntity<WrapperResponse<SalidaData>> crearHola(@RequestBody SalidaData hola ){
-        SalidaData result = salidaDataService.guardar(hola);
-        return new WrapperResponse<SalidaData>(true,"success",result)
+    public ResponseEntity<WrapperResponse<DataDto>> crearHola(@RequestBody DataDto data ){
+        SalidaData dataTemp= dataConverter.fromDTO(data);
+        SalidaData resultTemp = salidaDataService.guardar(dataTemp);
+        DataDto result =dataConverter.fromEntity(resultTemp);
+        return new WrapperResponse<DataDto>(true,"success",result)
                 .createResponse(HttpStatus.CREATED);
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<WrapperResponse<SalidaData>> getHola(@PathVariable("id") Integer id){
-        SalidaData result = salidaDataService.getData(id);
-        return new WrapperResponse<SalidaData>(true,"success",result)
+    public ResponseEntity<WrapperResponse<DataDto>> getHola(@PathVariable("id") Integer id){
+        SalidaData resultTemp = salidaDataService.getData(id);
+        DataDto result= dataConverter.fromEntity(resultTemp);
+        return new WrapperResponse<DataDto>(true,"success",result)
                 .createResponse(HttpStatus.OK);
     }
 

@@ -23,13 +23,13 @@ public class SalidaData {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "America/Lima")
+
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @Temporal(TemporalType.DATE)
     @Column(name = "fecha_salida",nullable = false)
     private Date fechaSalida;
 
-    @JsonFormat(pattern = "HH:mm:ss",timezone = "America/Lima")
+
     @Column(name = "hora_salida",nullable = false)
     private Time horaSalida;
 
